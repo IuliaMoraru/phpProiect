@@ -1,0 +1,47 @@
+{% set pageTitle="Events List" %} {% extends "layout.html" %} {% block head %} {{parent()}} {% endblock %} {% block content %}
+
+<table class="table table-bordered">
+
+    <tr>
+        <td colspan="5" class="text-right">
+            <a href="/user/edit">Edit Profile</a>
+        </td>
+        <td colspan="1" class="text-right">
+            <a href="/logout">Log Out</a>
+        </td>
+
+    </tr>
+    <tr>
+        <th>
+            Description
+        </th>
+        <th>
+            Type
+        </th>
+        <th>
+            Hours
+        </th>
+        <th colspan="3">
+            Actions
+        </th>
+    </tr>
+    {% for event in events %}
+
+    <tr>
+
+        <td>{{event.getDescription()}}</td>
+        <td>{{event.getType()}}</td>
+
+        <td>{{event.getHours()}}</td>
+        <td><a href="/events/{{event.getId()}}/edit">Edit</a></td>
+        <td><a href="/events/{{event.getId()}}/delete">Delete</a></td>
+    </tr>
+    {% endfor %}
+
+    <tr>
+        <td colspan="6" class="text-center">
+            <a href="/events/add">Add Events</a>
+        </td>
+    </tr>
+</table>
+{% endblock %}

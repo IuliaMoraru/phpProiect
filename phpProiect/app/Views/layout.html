@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="bootstrap.min.css" /> {% block head %}
+    <title>{{pageTitle}}</title>
+    {% endblock %}
+</head>
+
+<body>
+    <div id="content">{% block content %}Default content{% endblock %}</div>
+</body>
+
+</html>
